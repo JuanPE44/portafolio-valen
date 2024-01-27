@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import valen from "../../public/images/valen-perfil.webp";
+import Badge from "./Badge.astro";
+---
+
+<section class="min-h-screen relative flex justify-center">
+  <div
+    class="text-white absolute z-50 max-w-[770px] h-screen flex justify-center flex-col"
+  >
+    <Image
+      class="w-20 h-20 object-cover rounded-full mb-4"
+      src={valen}
+      alt="foto de valen ruiz"
+    />
+    <h1 class="text-5xl font-bold flex items-center gap-x-4 pb-4">
+      Hola, soy Valen <Badge>Disponible para trabajar</Badge>
+    </h1>
+    <h2 class="text-2xl text-wrap">
+      <span class="text-yellow-200/90">Técnico multimedial.</span> Tengo 23 años
+      y vivo <span class="text-red-200/90">en Tandil, Buenos Aires</span>.<span
+        class="opacity-80"
+      >
+        Me apasiona la fotografía y la realización de videos, siempre con un
+        buen ojo a los detalles y emociones.</span
+      >
+    </h2>
+  </div>
+</section>
