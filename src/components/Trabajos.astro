@@ -1,7 +1,14 @@
-<section class="min-h-screen relative">
+---
+import ListaTrabajos from "../components/ListaTrabajos.astro";
+---
+
+<section class="relative fondo-trabajos min-h-screen">
   <div
-    class="absolute top-0 z-[-2] h-screen w-full bg-orange-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    class="z-[100] w-full px-20 bg-[#151f10dd] flex flex-col items-center backdrop-blur-sm"
   >
+    <h2 class="text-5xl pt-20 italic text-center font-bold text-gray-100">
+      Trabajos<span class="text-green-600">.</span>
+    </h2>
+    <ListaTrabajos />
   </div>
-  <h2>TRABAJOS</h2>
 </section>
