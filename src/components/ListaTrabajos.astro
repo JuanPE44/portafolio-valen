@@ -2,7 +2,9 @@
 import { TRABAJOS_LIST } from "../constants";
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-20 max-w-[700px] mx-auto">
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-10 sm:my-20 max-w-[700px] mx-auto"
+>
   {
     TRABAJOS_LIST.map((trabajos) => {
       const { title } = trabajos;
@@ -15,9 +17,9 @@ import { TRABAJOS_LIST } from "../constants";
           <img
             class="h-auto max-w-full aspect-square object-cover"
             src={`../../public/images/${title}.webp`}
-            alt=""
+            alt="trabajo"
           />
-          <div class="flex justify-center items-center absolute top-0 w-full h-full bg-[#302916aa] hover:bg-[#30291655] transition-[0.5s]">
+          <div class="flex justify-center items-center absolute top-0 w-full h-full bg-[#30291655] hover:bg-[#302916aa] transition-[0.5s]">
             <h2 transition:name={`title-${title}`}>{title}</h2>
           </div>
         </a>

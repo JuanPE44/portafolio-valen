@@ -2,11 +2,13 @@
 import ListaTrabajos from "../components/ListaTrabajos.astro";
 ---
 
-<section class="relative fondo-trabajos min-h-screen">
+<section class="relative fondo-trabajos min-h-screen" id="trabajos">
   <div
-    class="z-[100] w-full px-20 bg-[#151f10dd] flex flex-col items-center backdrop-blur-sm"
+    class="z-[100] w-full px-6 sm:px-20 bg-[#151f10dd] flex flex-col items-center backdrop-blur-sm"
   >
-    <h2 class="text-5xl pt-20 italic text-center font-bold text-gray-100">
+    <h2
+      class="text-3xl sm:text-5xl pt-10 sm:pt-20 italic text-center font-bold text-gray-100"
+    >
       Trabajos<span class="text-green-600">.</span>
     </h2>
     <ListaTrabajos />

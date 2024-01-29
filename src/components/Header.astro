@@ -3,22 +3,68 @@
 ---
 
 <header
-  class="fixed z-50 flex my-4 justify-center opacity-80 backdrop-blur-xl left-1/2 -translate-x-1/2 rounded-3xl"
+  class="fixed w-full h-screen flex items-center flex-col z-50 sm:mt-3 overflow-hidden"
 >
-  <nav
-    class="text-orange-50 border-orange-50 border text-base font-semibold flex gap-x-6 px-10 py-1 rounded-3xl"
+  <div
+    class="justify-center opacity-80 hidden sm:flex backdrop-blur-xl rounded-3xl"
   >
-    <a href="" class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
-      >Inicio</a
+    <nav
+      class="text-orange-50 border-orange-50 border text-base font-semibold py-1 gap-x-6 px-10 rounded-3xl"
     >
-    <a href="" class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
-      >Trabajos</a
+      <a
+        href="#inicio"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        >Inicio</a
+      >
+      <a
+        href="#trabajos"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        >Trabajos</a
+      >
+      <a
+        href="#biografia"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        >Biografia</a
+      >
+      <a
+        href="#contacto"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        >Contacto</a
+      >
+    </nav>
+  </div>
+  <div class="aboslute flex justify-end w-full h-screen sm:hidden top-0">
+    <div class="absolute top-0 w-full z-[100]">
+      <div class="w-full backdrop-blur-sm flex justify-end px-3 py-2">
+        <svg
+          class="z-[100] opacity-80 w-12 h-12 cursor-pointer"
+          id="menu-button"
+          viewBox="0 0 24 24"
+          ><path
+            fill="#fff"
+            d="M4.5 17.27q-.213 0-.356-.145Q4 16.981 4 16.77q0-.213.144-.356q.143-.144.356-.144h15q.213 0 .356.144t.144.357q0 .213-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144Q4 12.212 4 12t.144-.356q.144-.143.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356q-.143.143-.356.143zm0-4.77q-.213 0-.356-.143T4 7.23q0-.213.144-.356q.143-.143.356-.143h15q.213 0 .356.144q.144.144.144.356q0 .213-.144.357q-.144.143-.356.143z"
+          ></path></svg
+        >
+      </div>
+    </div>
+    <div
+      class="relative bg-[#151f10aa] w-full flex justify-center items-center translate-y-[-100%] transition-[1s]"
+      id="menu"
     >
-    <a href="" class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
-      >Biografia</a
-    >
-    <a href="" class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
-      >Contacto</a
-    >
-  </nav>
+      <nav class="flex flex-col">
+        <a>Inicio</a>
+        <a>Trabajos</a>
+        <a>Biografia</a>
+        <a>Contacto</a>
+      </nav>
+    </div>
+  </div>
 </header>
+<script>
+  const buttonMenu = document.getElementById("menu-button");
+  const menu = document.getElementById("menu");
+
+  buttonMenu?.addEventListener("click", () => {
+    menu?.classList.toggle("translate-y-[-100%]");
+  });
+</script>
