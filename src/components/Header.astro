@@ -3,13 +3,13 @@
 ---
 
 <header
-  class="fixed w-full h-screen flex items-center flex-col z-50 sm:mt-3 overflow-hidden"
+  class="fixed w-full h-screen flex items-center flex-col z-50 sm:mt-3 overflow-hidden pointer-events-none"
 >
   <div
     class="justify-center opacity-80 hidden sm:flex backdrop-blur-xl rounded-3xl"
   >
     <nav
-      class="text-orange-50 border-orange-50 border text-base font-semibold py-1 gap-x-6 px-10 rounded-3xl"
+      class="text-orange-50 border-orange-50 border text-base font-semibold py-1 gap-x-6 px-10 rounded-3xl pointer-events-auto"
     >
       <a
         href="#inicio"
@@ -37,7 +37,7 @@
     <div class="absolute top-0 w-full z-[100]">
       <div class="w-full backdrop-blur-sm flex justify-end px-3 py-2">
         <svg
-          class="z-[100] opacity-80 w-12 h-12 cursor-pointer"
+          class="z-[100] opacity-80 w-12 h-12 cursor-pointer pointer-events-auto"
           id="menu-button"
           viewBox="0 0 24 24"
           ><path
@@ -51,7 +51,7 @@
       class="relative bg-[#151f10aa] w-full flex justify-center items-center translate-y-[-100%] transition-[1s]"
       id="menu"
     >
-      <nav class="flex flex-col">
+      <nav class="flex flex-col pointer-events-auto">
         <a>Inicio</a>
         <a>Trabajos</a>
         <a>Biografia</a>
