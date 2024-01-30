@@ -28,13 +28,13 @@ const { nombre } = Astro.props;
     {
       Array.from({ length: 6 }).map((_, i) => (
         <a
-          href={`/images/${nombre}/${i + 7}.jpg`}
+          href={`/images/${nombre}/${i + 7}.webp`}
           data-pswp-width="1669"
           data-pswp-height="2500"
           target="_blank"
           class="rounded-3xl overflow-hidden"
         >
-          <img src={`/images/${nombre}/${i + 7}.jpg`} alt="" />
+          <img src={`/images/${nombre}/${i + 7}.webp`} alt="" />
         </a>
       ))
     }

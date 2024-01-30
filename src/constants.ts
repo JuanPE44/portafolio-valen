@@ -1,9 +1,9 @@
 export const TRABAJOS_LIST = [
   {
-    title: "Gastronomia",
+    title: "Bandas",
   },
   {
-    title: "Bandas",
+    title: "Gastronomia",
   },
   {
     title: "Videos",
