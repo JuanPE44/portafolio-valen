@@ -1,4 +1,6 @@
 ---
+import "photoswipe/style.css";
+
 interface Props {
   nombre: string;
 }
@@ -6,98 +8,46 @@ interface Props {
 const { nombre } = Astro.props;
 ---
 
-<div class="grid grid-cols-2 xl:grid-cols-4 gap-4 w-full mt-20">
+<div class="grid grid-cols-2 gap-4 w-full my-20" id="gallery">
   <div class="grid gap-4">
-    <div>
-      <img
-        transition:name={nombre}
-        class="h-full object-cover max-w-full rounded-lg"
-        src={`../../public/images/${nombre}.webp`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--2.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--3.jpg`}
-        alt=""
-      />
-    </div>
+    {
+      Array.from({ length: 6 }).map((_, i) => (
+        <a
+          href={`/images/${nombre}/${i + 1}.jpg`}
+          data-pswp-width="1669"
+          data-pswp-height="2500"
+          target="_blank"
+          class="rounded-3xl overflow-hidden"
+        >
+          <img src={`/images/${nombre}/${i + 1}.jpg`} alt="" />
+        </a>
+      ))
+    }
   </div>
   <div class="grid gap-4">
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--4.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--5.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--6.jpg`}
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--7.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--8.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--8.jpg`}
-        alt=""
-      />
-    </div>
-  </div>
-  <div class="grid gap-4">
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--9.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--10.jpg`}
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src={`../../public/images/${nombre}/--11.jpg`}
-        alt=""
-      />
-    </div>
+    {
+      Array.from({ length: 6 }).map((_, i) => (
+        <a
+          href={`/images/${nombre}/${i + 7}.jpg`}
+          data-pswp-width="1669"
+          data-pswp-height="2500"
+          target="_blank"
+          class="rounded-3xl overflow-hidden"
+        >
+          <img src={`/images/${nombre}/${i + 7}.jpg`} alt="" />
+        </a>
+      ))
+    }
   </div>
 </div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+  lightbox.init();
+</script>
