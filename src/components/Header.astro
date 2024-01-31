@@ -13,29 +13,29 @@
     >
       <a
         href="/#inicio"
-        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
         >Inicio</a
       >
       <a
         href="/#trabajos"
-        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
         >Trabajos</a
       >
       <a
         href="/#biografia"
-        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
         >Biografia</a
       >
       <a
         href="/#contacto"
-        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s]"
+        class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
         >Contacto</a
       >
     </nav>
   </div>
   <div class="aboslute flex justify-end w-full h-screen sm:hidden top-0">
     <div class="absolute top-0 w-full z-[100]">
-      <div class="w-full flex justify-end px-3 py-2">
+      <div class="w-full flex justify-end px-r">
         <svg
           class="z-[100] opacity-80 w-12 h-12 cursor-pointer pointer-events-auto"
           id="menu-button"
@@ -48,23 +48,49 @@
       </div>
     </div>
     <div
-      class="relative bg-[#151f10aa] w-full flex justify-center items-center translate-y-[-100%] transition-[1s]"
+      class="relative bg-[#151f10dd] w-full flex justify-center items-center translate-y-[-100%] transition-[1s]"
       id="menu"
     >
-      <nav class="flex flex-col pointer-events-auto">
-        <a>Inicio</a>
-        <a>Trabajos</a>
-        <a>Biografia</a>
-        <a>Contacto</a>
+      <nav
+        class="flex flex-col pointer-events-auto text-xl uppercase gap-4"
+        id="nav-mobile"
+      >
+        <a
+          href="/#inicio"
+          class="px-3 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
+          >Inicio</a
+        >
+        <a
+          href="/#trabajos"
+          class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
+          >Trabajos</a
+        >
+        <a
+          href="/#biografia"
+          class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
+          >Biografia</a
+        >
+        <a
+          href="/#contacto"
+          class="px-3 py-1 rounded-3xl hover:bg-[#fff2] transition-[0.4s] text-center w-full"
+          >Contacto</a
+        >
       </nav>
     </div>
   </div>
 </header>
 <script>
   const buttonMenu = document.getElementById("menu-button");
+  const navMobile = document.querySelectorAll("#nav-mobile a");
   const menu = document.getElementById("menu");
 
   buttonMenu?.addEventListener("click", () => {
     menu?.classList.toggle("translate-y-[-100%]");
+  });
+
+  navMobile.forEach((a) => {
+    a.addEventListener("click", () => {
+      menu?.classList.remove("translate-y-[-100%]");
+    });
   });
 </script>
